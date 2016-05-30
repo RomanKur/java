@@ -1,0 +1,8 @@
+DROP TABLE DATA IF EXISTS;
+
+CREATE TABLE DATA (
+  id int AUTO_INCREMENT,
+  name VARCHAR(30),
+  email  VARCHAR(50),
+  comment VARCHAR(255),
+  PRIMARY KEY (id));
