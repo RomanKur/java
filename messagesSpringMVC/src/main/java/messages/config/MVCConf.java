@@ -38,16 +38,9 @@ public class MVCConf extends WebMvcConfigurerAdapter {
 		return db;
 	}
 
-	// @PostConstruct
-	// public void startDBManager() {
-	//
-	// DatabaseManager.main(new String[] { "--url", "jdbc:h2:mem:testdb",
-	// "--user", "sa", "--password", "" });
-	//
-	// }
-
 	@Bean
 	public Dao getCommentDao() {
 		return new DaoImpl(dataSource());
 	}
+
 }
