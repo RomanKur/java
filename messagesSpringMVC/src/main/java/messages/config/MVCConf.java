@@ -3,7 +3,7 @@ package messages.config;
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
-import org.hsqldb.util.DatabaseManagerSwing;
+import org.hsqldb.util.DatabaseManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,7 +43,7 @@ public class MVCConf extends WebMvcConfigurerAdapter {
 	@PostConstruct
 	public void startDBManager() {
 
-		DatabaseManagerSwing.main(new String[] { "--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", "" });
+		DatabaseManager.main(new String[] { "--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", "" });
 
 	}
 
