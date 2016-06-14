@@ -1,9 +1,7 @@
 package messages.config;
 
-import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
 
-import org.hsqldb.util.DatabaseManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -40,12 +38,13 @@ public class MVCConf extends WebMvcConfigurerAdapter {
 		return db;
 	}
 
-	@PostConstruct
-	public void startDBManager() {
-
-		DatabaseManager.main(new String[] { "--url", "jdbc:h2:mem:testdb", "--user", "sa", "--password", "" });
-
-	}
+	// @PostConstruct
+	// public void startDBManager() {
+	//
+	// DatabaseManager.main(new String[] { "--url", "jdbc:h2:mem:testdb",
+	// "--user", "sa", "--password", "" });
+	//
+	// }
 
 	@Bean
 	public Dao getCommentDao() {
